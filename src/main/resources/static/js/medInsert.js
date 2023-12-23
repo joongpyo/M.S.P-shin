@@ -1,4 +1,4 @@
-let btn = document.querySelector(".btn");
+let btn = document.querySelector(".insert-btn");
 function changeFn(){
     let medAge = document.querySelector("#medAge");
     var value = (medAge.options[medAge.selectedIndex].value)
@@ -79,7 +79,7 @@ function changeFn(){
             success: function(res) {
                 if(res.msg == "success"){
                     alert("등록 성공");
-                    location.href="/admin";
+                    location.href="/admin/medList";
                 }else{
                     alert("등록 실패");
                     document.location.reload(); 

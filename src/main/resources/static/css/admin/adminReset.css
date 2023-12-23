@@ -177,16 +177,7 @@
 
 
 
-.dis{
-    display: flex;
-    justify-content: center;
-}
-.medName, .medEff, .medType, .medCom, .medAge, .disName, .disSym{
-    width: 80%;
-    margin: 0 auto;
-    padding: 5px 8px;
-    border: 0;
-}
+
 .btn{
     width: 50px;
     padding: 7px 0;
@@ -195,7 +186,6 @@
     background-color: #41A7E3;
     cursor: pointer;
     color: #fff;
-
 }
 
 
@@ -216,7 +206,7 @@
     display: flex;
     justify-self: center;
 }
-
+/*
 select {
     height: 30px;
     border: 1px solid #504d4d;
@@ -224,7 +214,7 @@ select {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
 }
-
+*/
 .search-box {
     border: 0;
     outline: none;
@@ -262,9 +252,10 @@ select {
     outline: 0;
 }
 
-
-,
-
+.board-active{
+    color: #2196f3;
+    text-decoration: underline;
+}
 
 .search-form {
     display: flex;
@@ -281,7 +272,7 @@ select {
     justify-self: center;
 }
 
-select {
+.select-style {
     height: 30px;
     border: 1px solid #504d4d;
     border-right: 0;
@@ -324,4 +315,10 @@ select {
     cursor: pointer;
     border:0;
     outline: 0;
+}
+
+.content-title{
+    text-align: center;
+    color: #000;
+    margin-bottom: 50px;
 }

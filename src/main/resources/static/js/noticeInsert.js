@@ -73,7 +73,7 @@ function changeFn(){
                 document.location.reload();
             }if(res.msg == "success"){
                 alert("게시글 등록 완료!")
-                location.href="/admin";
+                location.href="/admin/noticeMain";
             }else{
                   alert("등록 실패 \n 서버관리자에게 문의하세요")
                   document.location.reload();

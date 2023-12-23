@@ -1,4 +1,4 @@
-let btn = document.querySelector(".btn");
+let btn = document.querySelector(".dis-btn");
 let disName = document.querySelector("input[name=disName]");
 let disSym1 = document.querySelector("#disSym1");
 let disSym2 = document.querySelector("#disSym2");
@@ -57,7 +57,7 @@ btn.addEventListener('click', (e)=>{
         success: function(res){
             if(res.msg == "success"){
                 alert("등록 성공");
-                location.href = "/admin";
+                location.href = "/admin/disList";
             }else{
                 alert("등록 실패! \n 서버관리자에게 문의하세요");
                 document.location.reload();               
