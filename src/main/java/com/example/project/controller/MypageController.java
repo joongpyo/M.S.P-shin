@@ -5,13 +5,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/Mypage")
+@RequestMapping("/mypage")
 public class MypageController {
 
-    @GetMapping("/update")
-    public String getHome(){
-
-        return "Mypage/update";
+    @GetMapping("")
+    public String getMypage(){
+        return "mypage";
     }
+
+    @GetMapping("/update")
+    public String getUpdate(){
+        return "mypage/update";
+    }
+
+
 
 }
