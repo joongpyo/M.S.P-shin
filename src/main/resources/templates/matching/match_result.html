@@ -54,10 +54,10 @@
                                     <td>[[${med.medDis}]]</td>
                                     <td style="text-align:left; margin-left:15px;">[[${med.medEff}]]</td>
                                     <td>[[${med.medType}]]</td>
-                                    <td>[[${med.medCom}]]</td>
+                                                            <td>[[${med.medCom}]]</td>
                                     <td>[[${med.medStore}]]</td>
                                     <td>
-                                        <button type="button" class="res-btn">약 정보 저장</button>
+                                        <button type="button" class="res-btn" onclick="loginCheck">약 정보 저장</button>
                                     </td>
                                 </tr>
                                 <input type="hidden" name="medId" th:value="${medId}">
@@ -188,59 +188,7 @@
 
 
 <script>
-    let btn = document.querySelector(".btn").addEventListener('click',(e)=>{
-        e.preventDefault();
-       var pregnant = document.getElementsByName("pregnant");
-       var pregnantValue;
-       var drugtype = document.getElementsByName("drugtype");
-       var drugtypeValue;
 
-
-
-
-       //라디오 버튼 값
-       for(var i=0; i < pregnant.length; i++) {
-        if(pregnant[i].checked == true) {
-            pregnantValue = pregnant[i].value
-      }
-    }
-       for(var i=0; i < drugtype.length; i++) {
-        if(drugtype[i].checked == true) {
-            drugtypeValue = drugtype[i].value
-      }
-    }
-
-    //셀렉트박스 값
-       var disease = document.getElementById("disease").value;
-       var age = document.getElementById("age").value;
-
-<!--       alert("임신 여부: " + pregnantValue + "\n연령대: " + age + "\n병명: " + disease + "\n약의 제형: " + drugtypeValue);-->
-
-         let obj = {
-                    medPregnant: pregnantValue,
-                    medAge: age,
-                    medDis: disease,
-                    medType: drugtypeValue
-                }
-
-
-        $.ajax({
-                type: "post",
-                url: "/matching/matching",
-                dataType: "json",
-                data: obj,
-                success: function(res) {
-                    if(res.msg == "success"){
-                        location.href = "/matching/match_result?";
-                    }
-
-                }
-         });
-
-
-
-
-});
 </script>
 </body>
 

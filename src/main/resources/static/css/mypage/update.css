@@ -1,0 +1,42 @@
+
+
+.content-wrap{
+
+    width:100%;
+    margin-left: 100px;
+}
+
+.update-box{
+    display: flex;
+
+    border-right: .5px solid #ccc;
+}
+
+.first{
+    border-top: .5px solid #ccc;
+}
+
+.last{
+    border-bottom-left-radius: 3px;
+}
+
+.update-box p {
+
+    color: #000;
+    border-right: .5px solid #ccc;
+    margin-right: 10px;
+    width: 190px;
+    padding: 10px 20px;
+}
+
+.update-box input[type="password"] {
+    border: .8px solid #ccc;
+    text-align: left;
+
+
+
+}
+
+.update-box input[type="password"]:focus {
+    outline: none; /* 테두리 색 및 두께 조절 가능 */
+}
