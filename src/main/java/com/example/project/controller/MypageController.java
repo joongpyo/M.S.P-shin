@@ -18,6 +18,17 @@ public class MypageController {
         return "mypage/update";
     }
 
+    @GetMapping("/myMedList")
+    public String getMyMedList(){
+        return "mypage/myMedList";
+    }
+
+    @GetMapping("/myBoard")
+    public String getMyBoard(){
+        return "mypage/myBoard";
+    }
+
+
 
 
 }

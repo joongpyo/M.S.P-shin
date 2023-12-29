@@ -29,8 +29,8 @@
 
                     <ul>
                         <li><a th:href="@{/mypage/update}"><i class="fa-solid fa-user-pen"></i>회원 정보 수정</a></li>
-                        <li><a href=""><i class="fa-solid fa-capsules"></i> 저장한 약 정보</a></li>
-                        <li><a href=""><i class="fa-solid fa-clipboard"></i> 내가 쓴 게시글</a></li>
+                        <li><a th:href="@{/mypage/myMedList}"><i class="fa-solid fa-capsules"></i> 저장한 약 정보</a></li>
+                        <li><a th:href="@{/mypage/myBoard}"><i class="fa-solid fa-clipboard"></i> 내가 쓴 게시글</a></li>
                         <li><a href=""><i class="fa-solid fa-right-from-bracket"></i> 회원 탈퇴</a></li>
                     </ul>
 
@@ -50,7 +50,12 @@
                         </p>
                     </div>
                     <div class="content-wrap">
-
+                        <div class="loginCheck">
+                            <div class="loginCheck-box">
+                                <p>비밀번호가 필요한 페이지 입니다.</p>
+                                <input type="password" placeholder="비밀번호를 입력하세요">
+                            </div>
+                        </div>
                     </div>     
                 </div>     
             </div>
