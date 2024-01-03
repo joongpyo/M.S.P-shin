@@ -28,6 +28,10 @@ public class MypageController {
         return "mypage/myBoard";
     }
 
+    @GetMapping("/myQuit")
+    public String getMyQuit(){
+        return "mypage/myQuit";
+    }
 
 
 

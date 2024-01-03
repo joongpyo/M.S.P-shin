@@ -6,7 +6,7 @@
 }
 
 .update-box{
-    display: flex;
+        display: flex;
 }
 
 .first{
@@ -59,7 +59,7 @@
     border: 0;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #ccc;
+    background-color: #7FD1AE;
     cursor: pointer;
     color: #fff;
     font-size: 16px;
@@ -68,5 +68,5 @@
 }
 
 .update-btn:active{
-    background-color: #B2B5BA;
+    background-color: #5EB5A6;
 }
