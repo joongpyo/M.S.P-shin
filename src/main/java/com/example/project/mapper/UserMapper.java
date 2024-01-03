@@ -1,6 +1,7 @@
 package com.example.project.mapper;
 
 import com.example.project.dto.UserDto;
+import org.apache.catalina.User;
 import org.apache.ibatis.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -26,6 +27,7 @@ public interface UserMapper {
     @Delete("delete from user where u_id = #{uId}")
     public void deleteUser(UserDto userDto);
 
-    /*@Update("update user set ")*/
+    @Update("update user set user_passwd = #{userPasswd} where u_id = #{uId}")
+    public void updateUser(UserDto userDto);
 }
 

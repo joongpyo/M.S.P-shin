@@ -8,6 +8,7 @@ let uId = document.querySelector(".uId");
         let pwdCheck = document.querySelector("input[name=pwdCheck]");
         let userPasswd = document.querySelector("input[name=userPasswd]");
 
+
         if(pwdCheck.value === userPasswd.value){
 
           if(confirm("회원 탈퇴를 진행하시겠습니까?\n다시 복구 할 수 없습니다.")){
@@ -36,7 +37,6 @@ let uId = document.querySelector(".uId");
             pwdCheck.focus();
             return false;
         }
-
          return false;
     });
 

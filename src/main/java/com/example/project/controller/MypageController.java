@@ -25,6 +25,13 @@ public class MypageController {
         return "mypage/update";
     }
 
+    @PostMapping("/update")
+    @ResponseBody
+    public Map<String, Object> setUpdate(@ModelAttribute UserDto userDto){
+        userService.updateUser(userDto);
+        return Map.of("msg", "success");
+    }
+
     @GetMapping("/myMedList")
     public String getMyMedList(){
         return "mypage/myMedList";
@@ -46,6 +53,8 @@ public class MypageController {
         userService.deleteUser(userDto);
         return Map.of("msg", "success");
     }
+
+
 
 
 

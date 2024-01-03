@@ -55,4 +55,8 @@ public class UserService {
     public void deleteUser(UserDto userDto){
         userMapper.deleteUser(userDto);
     }
+
+    public void updateUser(UserDto userDto){
+        userMapper.updateUser(userDto);
+    }
 }
