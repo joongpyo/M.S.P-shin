@@ -17,29 +17,9 @@
 <main>
     <div class="main-header">
         <div class="main-content">
-            <aside class="mypage-aside">
-                <div class="aside-title">
-                    <div class="title-letter">
-                        <strong>김회원</strong>님
-                        <p><i class="fa-regular fa-envelope"></i>mail@mail.com</p>
-                    </div>
-                </div>
 
-                <hr class="mypage-hr">
+            <div th:replace="~{/mypage/aside.html :: fragment-aside}"></div>
 
-                <ul>
-                    <li><a th:href="@{/mypage/update}"><i class="fa-solid fa-user-pen"></i>회원 정보 수정</a></li>
-                    <li><a th:href="@{/mypage/myMedList}"><i class="fa-solid fa-capsules"></i> 저장한 약 정보</a></li>
-                    <li><a th:href="@{/mypage/myBoard}"><i class="fa-solid fa-clipboard"></i> 내가 쓴 게시글</a></li>
-                    <li><a th:href="@{/mypage/myQuit}"><i class="fa-solid fa-right-from-bracket"></i> 회원 탈퇴</a></li>
-                </ul>
-
-                <hr class="mypage-hr">
-
-                <div class="logout-box">
-                    <button class="logout-btn"><a th:href="@{/logout}">로그아웃</a></button>
-                </div>
-            </aside>
             <div class="content-container">
                 <div class="title-box">
                     <h2>마이페이지</h2>

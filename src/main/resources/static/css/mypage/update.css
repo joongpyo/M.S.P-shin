@@ -59,7 +59,7 @@
     border: 0;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #7FD1AE;
+    background-color: #5EB5A6;
     cursor: pointer;
     color: #fff;
     font-size: 16px;
@@ -68,5 +68,5 @@
 }
 
 .update-btn:active{
-    background-color: #5EB5A6;
+    background-color: #47999A;
 }
