@@ -51,4 +51,8 @@ public class UserService {
 
         return userMapper.getUserList(map);
     }
+
+    public void deleteUser(UserDto userDto){
+        userMapper.deleteUser(userDto);
+    }
 }

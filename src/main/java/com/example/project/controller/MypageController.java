@@ -1,12 +1,19 @@
 package com.example.project.controller;
 
+import com.example.project.dto.UserDto;
+import com.example.project.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @Controller
 @RequestMapping("/mypage")
 public class MypageController {
+
+    @Autowired
+    UserService userService;
 
     @GetMapping("")
     public String getMypage(){
@@ -31,6 +38,13 @@ public class MypageController {
     @GetMapping("/myQuit")
     public String getMyQuit(){
         return "mypage/myQuit";
+    }
+
+    @PostMapping("/myQuit")
+    @ResponseBody
+    public Map<String, Object> deleteMyQuit(@ModelAttribute UserDto userDto){
+        userService.deleteUser(userDto);
+        return Map.of("msg", "success");
     }
 
 
