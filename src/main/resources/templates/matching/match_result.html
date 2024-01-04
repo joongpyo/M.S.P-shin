@@ -42,8 +42,6 @@
                         </tr>
                         </thead>
                         <tbody>
-
-                        <th:block th:if="${searchResults != null}">
                             <th:block th:each="med, k : ${searchResults}" >
                                 <tr>
                                     <td>
@@ -54,40 +52,22 @@
                                     <td>[[${med.medDis}]]</td>
                                     <td style="text-align:left; margin-left:15px;">[[${med.medEff}]]</td>
                                     <td>[[${med.medType}]]</td>
-                                                            <td>[[${med.medCom}]]</td>
-                                    <td>[[${med.medStore}]]</td>
-                                    <td>
-                                        <button type="button" class="res-btn" onclick="loginCheck">약 정보 저장</button>
-                                    </td>
-                                </tr>
-                                <input type="hidden" name="medId" th:value="${medId}">
-                            </th:block>
-                        </th:block>
-
-
-
-
-                        <th:block th:unless="${searchResults != null}">
-                            <th:block th:each="med, k : ${searchResults}" >
-                                <tr>
-                                    <td>
-                                        <strong>
-                                            <a href="">X</a>
-                                        </strong>
-                                    </td>
-                                    <td>[[${med.medDis}]]</td>
-                                    <td style="text-align:left; margin-left:15px;">[[${med.medEff}]]</td>
-                                    <td>[[${med.medType}]]</td>
                                     <td>[[${med.medCom}]]</td>
                                     <td>[[${med.medStore}]]</td>
                                     <td>
-                                        <button type="button" class="res-btn">약 정보 저장</button>
+                                        <button type="button" class="res-btn" th:onclick="savedMyMed([[${med.medId}]])">약 정보 저장</button>
                                     </td>
                                 </tr>
-                                <input type="hidden" name="medId" th:value="${medId}">
-                            </th:block>
-                        </th:block>
+                                <input type="hidden" name="medId" th:value="${med.medId}">
+                             </th:block>
 
+                            <th:block th:if="${session.user != null}">
+                                <input type="hidden" class="uId" name="uId" th:value="${session.user.uId}">
+                            </th:block>
+
+                            <th:block th:unless="${session.user != null}">
+                                <input type="hidden" class="uId" name="uId" th:value="''">
+                            </th:block>
                         </tbody>
                     </table>
                 </div>
@@ -95,13 +75,8 @@
         </div>
     </div>
 </div>
-</div>
-
-
-
 
 <main>
-
     <div class="one-hr">
         <hr>
     </div>
@@ -187,6 +162,33 @@
 
 
 <script>
+     let uId = document.querySelector(".uId");
+     function savedMyMed(medId){
+          if(uId.value === ''){
+            alert("로그인 후 이용하시기 바랍니다.");
+            location.href = "/user/login"
+
+          }else{
+            if(confirm("해당 약 정보를 저장하시겠습니까?")){
+                let obj = {
+                    uId: uId.value,
+                    medId: medId
+                }
+
+                $.ajax({
+                        type: "POST",
+                        url: "/mypage/save",
+                        data: obj,
+                        success: function(result) {
+                           if(result.msg == "success"){
+                                alert("약 정보가 저장되었습니다.");
+                                location.href = "/mypage/myMedList";
+                           }
+                        }
+                    });
+            }
+        }
+    }
 
 </script>
 </body>

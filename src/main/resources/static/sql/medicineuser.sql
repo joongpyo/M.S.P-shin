@@ -22,6 +22,13 @@ isFiles char(1) not null,
 primary key(med_id)
 );
 
+create table myMedicine(
+my_id int not null auto_increment,
+med_id int not null,
+u_id int not null,
+primary key(my_id)
+);
+
 create table qna(
 id int not null auto_increment,
 subject varchar(30) not null,

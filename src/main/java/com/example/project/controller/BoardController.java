@@ -16,7 +16,9 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/board")
-public class BoardController {
+public class
+
+BoardController {
     @Value("${fileDir}")
     String fileDir;
 
