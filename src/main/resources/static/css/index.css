@@ -115,6 +115,13 @@ main {
     margin-bottom: 15px;
     font-size: 30px;
     /* font-family: 'Noto Sans KR', sans-serif; */
+    -
+
+}
+
+.adv-title h1 span{
+    color: #217fbc;
+
 }
 
 .adv-title p {

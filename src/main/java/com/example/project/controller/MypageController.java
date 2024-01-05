@@ -48,8 +48,11 @@ public class MypageController {
 
     @GetMapping("/myMedList")
     public String getMyMedList(){
+
         return "mypage/myMedList";
     }
+
+
 
     @PostMapping("/save")
     @ResponseBody
